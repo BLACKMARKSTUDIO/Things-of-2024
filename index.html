@@ -1,9 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1>Things in 2024</h1>
-    <p>This site was created in 2024.</p>
-    <p>We will record objects, software, scenery, events, etc. in 2024. </p>
-    <center><h6>Things in 2024</h6></center>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Archive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>2024 Archive</h1>
+
+    <label for="eventInput">일어난 일:</label>
+    <input type="text" id="eventInput">
+    <button onclick="addEvent()">기록</button>
+
+    <ul id="eventList"></ul>
+
+    <script>
+        function addEvent() {
+            var eventInput = document.getElementById('eventInput');
+            var eventList = document.getElementById('eventList');
+
+            if (eventInput.value.trim() !== '') {
+                var listItem = document.createElement('li');
+                listItem.textContent = eventInput.value;
+                eventList.appendChild(listItem);
+                eventInput.value = '';
+            }
+        }
+    </script>
+</body>
 </html>
